@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0G FAUCET :: CYBERPUNK TERMINAL</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cyberpunk.css') }}">
+</head>
+<body>
+    <!-- Scanline overlay -->
+    <div class="scanlines"></div>
+
+    <!-- Grid background -->
+    <div class="grid-bg"></div>
+
+    <!-- Main container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="glitch-wrapper">
+                <div class="glitch" data-text="0G TERMINAL">0G TERMINAL</div>
+            </div>
+            <div class="subtitle">NEURAL SCRAPER v2.077</div>
+            <div class="status-bar">
+                <span class="status-indicator"></span>
+                <span class="status-text">SYSTEM ONLINE</span>
+                <span class="connection-status" id="connection-status">CONNECTED</span>
+            </div>
+        </header>
+
+        <!-- Main terminal -->
+        <main class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="btn-close"></span>
+                    <span class="btn-minimize"></span>
+                    <span class="btn-maximize"></span>
+                </div>
+                <div class="terminal-title">SCRAPER_INTERFACE.exe</div>
+            </div>
+
+            <div class="terminal-body">
+                <!-- Input section -->
+                <div class="input-section">
+                    <div class="prompt-line">
+                        <span class="prompt">&gt;</span>
+                        <span class="command">INITIATE SCRAPE PROTOCOL</span>
+                    </div>
+                    <button id="scrapeBtn" class="cyber-button">
+                        <span class="button-text">EXECUTE SCRAPE</span>
+                        <span class="button-glow"></span>
+                    </button>
+                </div>
+
+                <!-- Loading indicator -->
+                <div id="loading" class="loading hidden">
+                    <div class="loading-text">
+                        <span class="loading-bracket">[</span>
+                        <span class="loading-dots">
+                            <span>.</span><span>.</span><span>.</span>
+                        </span>
+                        <span class="loading-label">SCANNING NEURAL NET</span>
+                        <span class="loading-dots">
+                            <span>.</span><span>.</span><span>.</span>
+                        </span>
+                        <span class="loading-bracket">]</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <!-- Output section -->
+                <div id="output" class="output-section">
+                    <div class="output-header">
+                        <span class="output-label">SYSTEM OUTPUT</span>
+                        <span class="timestamp" id="timestamp"></span>
+                    </div>
+                    <div class="output-content" id="outputContent">
+                        <div class="welcome-message">
+                            <pre class="ascii-art">
+   ___   ____   _____ ___  __  __ ___ _____ _____
+  / _ \ / ___| |  ___/ _ \|  \/  |_ _|_   _|_   _|
+ | | | | |  _  | |_ | | | | |\/| || |  | |   | |
+ | |_| | |_| | |  _|| |_| | |  | || |  | |   | |
+  \___/ \____| |_|   \___/|_|  |_|___| |_|   |_|
+
+            </pre>
+                            <p class="system-msg">Awaiting command input...</p>
+                            <p class="system-msg">Type EXECUTE to begin neural scraping...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-info">
+                <span class="footer-label">LOCATION:</span>
+                <span class="footer-value">NIGHT CITY</span>
+            </div>
+            <div class="footer-info">
+                <span class="footer-label">USER:</span>
+                <span class="footer-value">NETRUNNER_001</span>
+            </div>
+            <div class="footer-info">
+                <span class="footer-label">CORES:</span>
+                <span class="footer-value cores-count">8</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
